@@ -1,0 +1,184 @@
+.background {
+    display: flex;
+    justify-content: center;
+}
+
+.admin-elements-container {
+    display: flex;
+    justify-content: center;
+    margin: 30px auto;
+    width: 100%;
+}
+
+.admin-elements-container .inputs-tables-container {
+    display: block;
+    width: 80%;
+}
+
+.admin-elements-container .inputs-tables-container input {
+    opacity: 0;
+    position: absolute;
+    margin-left: 30%;
+}
+
+.admin-elements-container .inputs-tables-container label {
+    font-size: 20px;
+    background-color: white;
+    position: absolute;
+    border-radius: 10px;
+    padding: 15px;
+    box-sizing: border-box;
+    transition: all  0.4s ease;
+}
+
+.admin-elements-container .inputs-tables-container .radio1 {
+    margin-left: 25%;
+}
+
+.admin-elements-container .inputs-tables-container .radio2 {
+    margin-left: 47%;
+}
+
+.admin-elements-container .inputs-tables-container .card-container {
+    margin: 80px auto;
+    display: flex;
+    width: 60%;
+    height: 60%;
+    justify-content: center;
+    align-items: center;
+    perspective: 1000px;
+}
+
+.admin-elements-container .inputs-tables-container .card-container .data-container {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.3s ease-in-out;
+    transform-style: preserve-3d;
+}
+
+.admin-elements-container .inputs-tables-container .radio1:checked ~ .card-container .data-container {
+    transform: rotateY(180deg);
+}
+
+.admin-elements-container .inputs-tables-container .radio1:checked ~ label[class="radio1"],
+.admin-elements-container .inputs-tables-container .radio2:checked ~ label[class="radio2"] {
+    background-color: rgb(124, 124, 124);
+    transition: all 0.4s ease;
+}
+
+.admin-elements-container .inputs-tables-container .card-container .data-container .inventory-container,
+.admin-elements-container .inputs-tables-container .card-container .data-container .sales-container {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    backface-visibility: hidden;
+    display: flex;
+    justify-content: center;
+    border-radius: 20px;
+}
+
+.admin-elements-container .inputs-tables-container .card-container .data-container .inventory-container {
+    background-color: white;
+    transform: rotateY(180deg);
+}
+
+.admin-elements-container .inputs-tables-container .card-container .data-container .sales-container {
+    background-color: white;
+}
+
+.inventory-container .ornaments-container,
+.inventory-container .flavors-container,
+.sales-container .table-container {
+    height: 90%;
+    width: 70%;
+    display: flex;
+    align-self: center;
+    justify-content: center;
+    overflow-y: auto;
+}
+
+.sales-container .table-container {
+    width: 90%;
+}
+
+.inventory-container .ornaments-container table thead,
+.inventory-container .flavors-container table thead {
+    position: sticky;
+    top: 0;
+}
+
+.sales-container .table-container table thead {
+    position: sticky;
+    top: 0;
+}
+
+table {
+    border-spacing: 0;
+    border-collapse: collapse;
+    width: 300px;
+    height: auto;
+}
+
+table caption {
+    font-size: 30px;
+    font-weight: bold;
+}
+
+thead {
+    background-color: rgb(222, 244, 248);
+}
+
+td, th {
+    border: solid 1px #ccc;
+    padding: 5px;
+}
+
+td:nth-child(2) {
+    text-align: center;
+}
+
+tr:nth-child(even) {
+    background-color: rgb(250, 248, 248);
+}
+
+tr:hover {
+    background-color: rgba(200, 200, 255, 0.563);
+    color: black;
+}
+
+.data-container .sales-container table {
+    width: auto;
+}
+
+.data-container .sales-container td,
+.data-container .sales-container th {
+    padding: 10px;
+}
+
+@media screen and (max-width: 500px) {
+    .inputs-tables-container {
+        width: 100% !important;
+    }
+
+    .inputs-tables-container .radio1 {
+        margin-left: 10% !important;
+    }
+
+    .inputs-tables-container .radio2 {
+        margin-left: 60% !important;
+    }
+
+    .inputs-tables-container .card-container {
+        width: 95% !important;
+    }
+
+    .inputs-tables-container .card-container .inventory-container {
+        gap: 5px;
+    }
+}
+
+
